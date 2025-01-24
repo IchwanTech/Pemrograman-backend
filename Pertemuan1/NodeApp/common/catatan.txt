@@ -1,0 +1,3 @@
+- CommonJs itu identik denga require()
+- Lalu nama variable tidak boleh "module"
+- CommonJs adalah type module default punya NodeJs
