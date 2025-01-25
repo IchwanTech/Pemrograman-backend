@@ -1,0 +1,5 @@
+Nodejs Modules itu ada 3
+- Core modules, yaitu Modules yang sudah disediakan oleh NodeJs
+- Local Modules, yaitu Modules yang kita buat sendiri
+- Third Party Modules, yaitu modules yang dibuat oleh orang lain dan bisa kita pakai
+  dan sudah tersedia di npm
