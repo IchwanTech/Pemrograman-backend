@@ -29,53 +29,69 @@ Opsi:
 Pilih (1/2/3): `,
     (pilihan) => {
       if (pilihan === "1") {
-        rl.question("Masukkan kode makanan: ", (menu) => {
-          if (menu === "NG") {
-            namaMenu.push("Nasi Goreng");
-            hargaMenu.push(15000);
-            console.log("Pesanan berhasil ditambahkan");
-          } else if (menu === "AG") {
-            namaMenu.push("Ayam Geprek");
-            hargaMenu.push(10000);
-            console.log("Pesanan berhasil ditambahkan");
-          } else if (menu === "AB") {
-            namaMenu.push("Ayam Bakar");
-            hargaMenu.push(12000);
-            console.log("Pesanan berhasil ditambahkan");
-          } else if (menu === "ET") {
-            namaMenu.push("Es Teh Manis");
-            hargaMenu.push(5000);
-            console.log("Pesanan berhasil ditambahkan");
-          } else if (menu === "EJ") {
-            namaMenu.push("Es Jeruk Peras");
-            hargaMenu.push(8000);
-            console.log("Pesanan berhasil ditambahkan");
-          } else {
-            console.log("Kode makanan tidak ditemukan");
-          }
-          tampilOpsi();
-        });
+        pesanMakanan();
       } else if (pilihan === "2") {
         if (namaMenu.length === 0) {
           console.log("Anda Belum Memesan Apapun");
         } else {
-          console.log("Daftar Pesanan Saya:");
           for (let i = 0; i < namaMenu.length; i++) {
-            console.log(`${i + 1}. ${namaMenu[i]} - Rp. ${hargaMenu[i]}`);
+            console.log(
+              `${i + 1}. ${namaMenu[i]} - Rp. ${hargaMenu[i].toLocaleString()} `
+            );
           }
-          const total = hargaMenu.reduce((totalHarga, hargaSaatIni) => {
-            return totalHarga + hargaSaatIni;
-          });
-          console.log(`
-Total Harga: Rp. ${total}`);
+
+          console.log("");
+
+          const total = hargaMenu.reduce(
+            (totalHarga, hargaSaatIni) => totalHarga + hargaSaatIni,
+            0
+          );
+          console.log(`Total Harga: Rp. ${total.toLocaleString()}`);
         }
         tampilOpsi();
       } else if (pilihan === "3") {
-        console.log("Terimakasih sudah berkunjung kewarung kami..");
+        console.log("Terimakasih sudah berkunjung ke warung kami..");
         rl.close();
+      } else {
+        console.log("Pilihan tidak tersedia");
+        tampilOpsi();
       }
     }
   );
 };
 
 tampilOpsi();
+
+const pesanMakanan = () => {
+  rl.question("Masukkan kode makanan: ", (menu) => {
+    if (menu === "NG") {
+      namaMenu.push("Nasi Goreng");
+      hargaMenu.push(15000);
+      console.log("Pesanan berhasil ditambahkan");
+      tampilOpsi();
+    } else if (menu === "AG") {
+      namaMenu.push("Ayam Geprek");
+      hargaMenu.push(10000);
+      console.log("Pesanan berhasil ditambahkan");
+      tampilOpsi();
+    } else if (menu === "AB") {
+      namaMenu.push("Ayam Bakar");
+      hargaMenu.push(12000);
+      console.log("Pesanan berhasil ditambahkan");
+      tampilOpsi();
+    } else if (menu === "ET") {
+      namaMenu.push("Es Teh Manis");
+      hargaMenu.push(5000);
+      console.log("Pesanan berhasil ditambahkan");
+      tampilOpsi();
+    } else if (menu === "EJ") {
+      namaMenu.push("Es Jeruk Peras");
+      hargaMenu.push(8000);
+      console.log("Pesanan berhasil ditambahkan");
+      tampilOpsi();
+    } else {
+      console.log("Kode Makanan Salah");
+      pesanMakanan();
+    }
+  });
+};
