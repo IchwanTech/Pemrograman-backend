@@ -1,0 +1,19 @@
+{
+  "name": "mvc-kelas-terbuka",
+  "version": "1.0.0",
+  "description": "\"Tutorial paling gokil\"",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "Ichwan Noerfitrah",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
