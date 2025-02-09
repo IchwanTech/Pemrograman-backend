@@ -16,6 +16,7 @@ let user = [
   { id: "2", name: "Babachan", age: 19 },
   { id: "3", name: "Slamet Cahyadi", age: 34 },
 ];
+
 app.get("/user", (req, res) => {
   res.json({
     status: 200,
@@ -37,23 +38,21 @@ const cekParam = (req, res, next) => {
   }
 };
 
-// membuat validasi kalo inputan user == kosong
-//atau inputan user == number
-// const validasi = (req, res, next) => {
-//   const { nama, usia } = req.body;
-//   if (!nama || typeof nama !== "string") {
-//     res.status(400).json({
-//       message: "Nama harus diisi, atau berupa string ",
-//     });
-//   } else if (!usia || typeof usia !== "number") {
-//     res.status(400).json({
-//       message: "Usia harus diisi angka/berupa number",
-//     });
-//   }
-//   next();
-// };
-
 const validasi = (req, res, next) => {
+  const { nama, usia } = req.body;
+  if (!nama || typeof nama !== "string") {
+    res.status(400).json({
+      message: "Nama harus diisi, atau berupa string ",
+    });
+  } else if (!usia || typeof usia !== "number") {
+    res.status(400).json({
+      message: "Usia harus diisi angka/berupa number",
+    });
+  }
+  next();
+};
+
+const login = (req, res, next) => {
   const { username, password } = req.body;
   if (username === "admin" && password === "admin123") {
     next();
@@ -67,7 +66,7 @@ const validasi = (req, res, next) => {
 //simulasi  buat jalur POST
 //menerima kiriman data dari client
 //route level middleware
-app.post("/login", validasi, (req, res) => {
+app.post("/login", login, (req, res) => {
   // buat destructuring dari inputan user
   const { nama, usia } = req.body;
   res.json({

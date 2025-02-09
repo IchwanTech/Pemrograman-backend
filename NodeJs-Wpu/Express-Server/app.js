@@ -11,9 +11,8 @@ app.get("/", (req, res) => {
   //   nama: "Ichwan",
   //   email: "ichwan@gmail.com",
   //   nomor: "08123456789",
-  // });
 });
-app.get("/about", (req, res) => {
+app.get("/about/iwan", (req, res) => {
   // res.send("Ini adalah halaman about");
 
   res.sendFile("./about.html", { root: __dirname });

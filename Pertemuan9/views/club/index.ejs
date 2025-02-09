@@ -1,0 +1,31 @@
+<div class="row g-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0"><%= judul %></h6>
+            <a href="">Show All</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0 ">
+                <thead>
+                    <tr class="text-white">
+                        <th style="width: 10px;">No</th>
+                        <th scope="col">Nama Club</th>
+                        <th scope="col">Negara</th>
+                        <th scope="col">Stadion</th>
+                
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clubs.forEach(element => { %>
+                     <tr>
+                        <td><%= element.id %> </td>
+                        <td><%= element.nama%></td>
+                        <td><%= element.negara %></td>
+                        <td><%= element.stadion %></td>
+                     </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

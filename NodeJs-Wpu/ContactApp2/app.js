@@ -1,5 +1,6 @@
 // mengambil argumen dari terminal
 // console.log(process.argv[2]);
+// yargs digunakan untuk memanipulasi argumen
 const yargs = require("yargs");
 const contacts = require("./contacts");
 
@@ -25,6 +26,7 @@ yargs.command({
       type: "string",
     },
   },
+
   handler(argv) {
     contacts.simpanContact(argv.nama, argv.email, argv.nomor);
   },

@@ -13,7 +13,7 @@ const tampilMenu = () => {
 ====================================
 |      Welcome to CoffeJahat       |
 ====================================
-    
+
 1. Daftar Akun
 2. Login
 3. Ubah Password
@@ -35,11 +35,11 @@ const tampilOpsi = () => {
         ubahPassword();
         break;
       case "4":
-        console.log("\nTerima kasih telah menggunakan layanan kami.");
+        console.log("Terima kasih telah menggunakan layanan kami.");
         rl.close();
         break;
       default:
-        console.log("\n[!] Pilihan tidak tersedia, coba lagi.");
+        console.log("Pilihan tidak tersedia, coba lagi.");
         tampilOpsi();
     }
   });
@@ -52,7 +52,7 @@ const daftarAkun = () => {
 ====================================
 |          DAFTAR AKUN             |
 ====================================    
-    `);
+`);
 
   rl.question("Masukkan nama       : ", (name) => {
     if (!name.trim()) {
