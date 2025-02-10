@@ -1,0 +1,2 @@
+1. Folder ini terkoneksi dengan mysql
+2. syarat membuat koneksi DB
