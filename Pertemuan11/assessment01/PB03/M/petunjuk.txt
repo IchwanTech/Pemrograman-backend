@@ -1,0 +1,5 @@
+Tampilkan luas persegi dan lingkaran lewat file app.js
+
+Output yang diharapkan : 
+Luas persegi = 100
+Luas lingkaran = 78.5

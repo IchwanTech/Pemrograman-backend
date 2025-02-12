@@ -1,0 +1,2 @@
+commnJs adalah module system bawaan nodeJs, yang implementasinya menggunakan require, 
+sedangkan moduleES6 adalah ,module system yang lebih modern yang implementasinya menggunakan export dan import

@@ -1,0 +1,1 @@
+Tampilkan data dari parameter nama yang ada di URL

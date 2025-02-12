@@ -1,0 +1,4 @@
+tampilkan di console menggunakan file index.html, output yang diharapkan
+
+Nilai a = 10
+Nilai b = 20

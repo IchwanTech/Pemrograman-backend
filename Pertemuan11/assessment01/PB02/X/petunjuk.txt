@@ -1,0 +1,7 @@
+Tampilkan daftar warga lewat file app.js
+
+Output yang diharapkan :
+- Hamdan
+- Jamal
+- Okta
+- Samsuri
