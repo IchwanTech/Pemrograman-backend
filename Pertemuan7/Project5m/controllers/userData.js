@@ -81,16 +81,23 @@ const updateUser = (req, res) => {
 };
 
 // DELETE user menggunakan slice
-const deleteUser = (req, res) => {
+const deleteUser = () => {
   const { id } = req.params;
-  const index = dataUser.findIndex((user) => user.id == id);
+  const dataBaru = dataUser.findIndex((data) => data.id == id);
 
-  if (index === -1) {
-    return res.status(404).json({
+  if (dataBaru === -1) {
+    return res.json({
       status: 404,
-      message: "Data user tidak ditemukan",
+      message: "data tidak ditemukan",
     });
   }
+
+  dataUser.splice(dataBaru, 1);
+
+  res.json({
+    status: 200,
+    message: "Data berhasil dihapus",
+  });
 };
 
 export { getAll, getById, createUser, updateUser, deleteUser };

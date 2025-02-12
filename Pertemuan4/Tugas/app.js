@@ -18,7 +18,7 @@ const tampilMenu = () => {
 2. Login
 3. Ubah Password
 4. Keluar
-    `);
+`);
 };
 
 const tampilOpsi = () => {
