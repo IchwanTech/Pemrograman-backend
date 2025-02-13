@@ -12,12 +12,21 @@ const Mahasiswa = sequelize.define("mahasiswa", {
   },
   nama: {
     type: DataTypes.STRING(99),
-    allowNull: true,
+    // default nya senua field tabel dalam sequelize adalah notNull
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: "Nama mahasiswa tidak boleh kosong",
+      },
+      len: {
+        args: [4, 10],
+        msg: "Nama mahasiswa min.4/ max.10 karakter",
+      },
+    },
   },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    // memberikan default value
     defaultValue: DataTypes.NOW,
   },
   updatedAt: {

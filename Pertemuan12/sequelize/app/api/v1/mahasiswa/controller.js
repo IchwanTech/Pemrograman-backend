@@ -17,21 +17,26 @@ const getData = async (req, res) => {
   }
 };
 
-// ini insert into
 const createData = async (req, res) => {
   try {
     const { nama } = req.body;
-    const tambah = await model.create({
-      nama,
-    });
-    res.json({
+    if (!nama) {
+      return res.status(400).json({
+        status: 400,
+        message: "Nama tidak boleh kosong, gessssss",
+      });
+    }
+
+    const tambah = await model.create({ nama });
+
+    return res.status(201).json({
       status: 201,
       message: "Data berhasil ditambahkan",
       data: tambah,
     });
   } catch (error) {
-    res.json({
-      status: 400,
+    return res.status(500).json({
+      status: 500,
       message: error.message,
     });
   }
