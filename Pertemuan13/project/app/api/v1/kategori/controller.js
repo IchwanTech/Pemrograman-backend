@@ -24,19 +24,18 @@ const getById = async (req, res) => {
     if (!data) {
       return res.status(404).json({
         status: 404,
-        message: "Data tidak ditemukan",
+        message: "Data kategori tidak ditemukan",
       });
     }
 
     return res.status(200).json({
       status: 200,
-      message: "Data berhasil didapatkan",
-      data,
+      message: "Data kategori berhasil didapatkan",
     });
   } catch (error) {
     return res.status(500).json({
       status: 404,
-      message: "Data tidak ditemukan",
+      message: "Data kategori tidak ditemukan",
     });
   }
 };
