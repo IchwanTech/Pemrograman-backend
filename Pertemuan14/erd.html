@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERD Pemesanan Fasilitas Kesehatan</title>
+    <style>
+      .mermaid {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <h2>ERD - Pemesanan Fasilitas Kesehatan</h2>
+    <div class="mermaid">
+      graph TD; Pengguna -->|1:N| Janji_Temu; Dokter -->|1:N| Janji_Temu;
+      Pengguna -->|1:N| Pemesanan_Kamar; Kamar -->|1:N| Pemesanan_Kamar;
+      Janji_Temu -->|1:1| Pembayaran; Pemesanan_Kamar -->|1:1| Pembayaran;
+      Pengguna -->|1:N| Pembayaran; Admin -->|1:N| Pembayaran(verifikasi_BPJS);
+      Pengguna -->|1:N| Rekam_Medis; Dokter -->|1:N| Rekam_Medis; Pengguna
+      -->|1:N| Log_Aktivitas;
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        mermaid.initialize({ startOnLoad: true });
+        mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+      });
+      console.log(typeof mermaid);
+    </script>
+  </body>
+</html>

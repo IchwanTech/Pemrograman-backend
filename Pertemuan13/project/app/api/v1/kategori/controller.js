@@ -74,7 +74,7 @@ const createData = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 404,
-      message: "Data tidak ditemukan",
+      message: error.errors[0].message,
     });
   }
 };
@@ -97,7 +97,8 @@ const deleteData = async (req, res) => {
       },
     });
     return res.status(200).json({
-      st,
+      status: 200,
+      message: "Data berhasil dihapus",
     });
   } catch (error) {
     return res.status(500).json({

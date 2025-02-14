@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/kategori", show);
 router.get("/kategori/:id", getById);
 router.post("/kategori/create", createData);
-router.delete("/kategori/:id", deleteData);
-router.put("/kategori/:id", updateData);
+router.delete("/kategori/delete/:id", deleteData);
+router.put("/kategori/update/:id", updateData);
 
 export default router;
