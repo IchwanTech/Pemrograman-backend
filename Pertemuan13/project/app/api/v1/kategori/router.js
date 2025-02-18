@@ -6,6 +6,7 @@ import {
   deleteData,
   updateData,
 } from "./controller.js";
+import uploadImage from "../middleware/uploadImage.js";
 
 const router = express.Router();
 

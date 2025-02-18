@@ -31,6 +31,7 @@ const getById = async (req, res) => {
     return res.status(200).json({
       status: 200,
       message: "Data kategori berhasil didapatkan",
+      data,
     });
   } catch (error) {
     return res.status(500).json({

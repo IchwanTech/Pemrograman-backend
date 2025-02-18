@@ -4,7 +4,9 @@ import routerBuku from "./app/api/v1/buku/router.js";
 const app = express();
 const pattern = "/api/v1";
 
-app.use(express.json());
+// app.use(express.json());
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(pattern, routerKategori);
 app.use(pattern, routerBuku);

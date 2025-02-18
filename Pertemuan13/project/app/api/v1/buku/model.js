@@ -16,7 +16,10 @@ const Buku = sequelize.define(
     },
     judul_buku: {
       type: DataTypes.STRING(200),
-      allowNull: true,
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: "Judul buku tidak boleh kosong" },
+      },
     },
     kategori_id: {
       type: DataTypes.INTEGER,
@@ -25,22 +28,38 @@ const Buku = sequelize.define(
         model: "kategori",
         key: "id",
       },
+      validate: {
+        notEmpty: { msg: "Kategori ID tidak boleh kosong" },
+        isInt: { msg: "Kategori ID harus berupa angka" },
+      },
     },
     penulis: {
       type: DataTypes.STRING(50),
       allowNull: false,
+      validate: {
+        notEmpty: { msg: "Nama penulis tidak boleh kosong" },
+      },
     },
     deskripsi: {
       type: DataTypes.TEXT,
       allowNull: false,
+      validate: {
+        notEmpty: { msg: "Deskripsi tidak boleh kosong" },
+      },
+    },
+    sampul: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     updatedAt: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
